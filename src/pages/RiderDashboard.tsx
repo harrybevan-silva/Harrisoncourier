@@ -66,7 +66,7 @@ const RiderDashboard = () => {
             {/* New Request Modal/Card pattern */}
             <div className="bg-white rounded-3xl border border-primary ring-4 ring-primary/20 p-5 shadow-xl animate-in slide-in-from-bottom-5">
               <div className="flex justify-between items-center mb-4 border-b border-gray-100 pb-3">
-                 <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-yellow-100 text-yellow-800 text-xs font-bold uppercase">
+                 <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-blue-100 text-blue-800 text-xs font-bold uppercase">
                    New Request
                  </div>
                  <span className="font-mono font-bold text-sm text-gray-500">HC-193</span>
@@ -107,7 +107,7 @@ const RiderDashboard = () => {
                  <button className="bg-gray-100 text-gray-600 font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-200 active:scale-95 transition-transform">
                    <X className="w-5 h-5" /> Decline
                  </button>
-                 <button className="bg-primary text-secondary font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-primary-dark active:scale-95 transition-transform shadow-lg shadow-primary/30">
+                 <button className="bg-primary text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-primary-dark active:scale-95 transition-transform shadow-lg shadow-primary/30">
                    <Check className="w-5 h-5" /> Accept
                  </button>
               </div>

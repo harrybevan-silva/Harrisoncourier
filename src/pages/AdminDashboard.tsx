@@ -43,7 +43,7 @@ const AdminDashboard = () => {
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       )}>
         <Link to="/" className="p-6 hidden md:flex items-center gap-2 mb-8">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-secondary text-xl">H</div>
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-white text-xl">H</div>
             <div className="flex flex-col text-white">
               <span className="font-bold text-xl leading-none tracking-tight">Harrison</span>
               <span className="text-[10px] uppercase font-bold tracking-widest text-primary">Admin Station</span>
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
                 className={cn(
                   "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors",
                   activeTab === item.id 
-                    ? "bg-primary text-secondary" 
+                    ? "bg-primary text-white" 
                     : "text-gray-400 hover:bg-white/10 hover:text-white"
                 )}
               >

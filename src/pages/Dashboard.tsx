@@ -33,7 +33,7 @@ const UserDashboard = () => {
       {/* Mobile Header */}
       <div className="md:hidden bg-white border-b border-gray-200 px-4 py-3 flex justify-between items-center fixed top-0 w-full z-30">
         <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-bold text-secondary text-sm">H</div>
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-bold text-white text-sm">H</div>
             <span className="font-bold text-lg leading-none text-secondary">Harrison</span>
         </Link>
         <button onClick={() => setSidebarOpen(!isSidebarOpen)} className="p-2">
@@ -47,7 +47,7 @@ const UserDashboard = () => {
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       )}>
         <Link to="/" className="p-6 hidden md:flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-secondary text-xl">H</div>
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-white text-xl">H</div>
             <div className="flex flex-col">
               <span className="font-bold text-xl leading-none text-secondary tracking-tight">Harrison</span>
               <span className="text-[10px] uppercase font-bold tracking-widest text-gray-500">Logistics</span>
@@ -160,7 +160,7 @@ const BookingForm = () => {
             <p className="text-sm text-gray-500 font-medium font-sans">Total Estimated Cost</p>
             <p className="text-3xl font-extrabold text-secondary mt-1">KES 350</p>
           </div>
-          <button type="button" onClick={() => alert("Proceeding to M-Pesa prompt")} className="w-full md:w-auto bg-primary text-secondary font-bold px-8 py-3.5 rounded-xl hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
+          <button type="button" onClick={() => alert("Proceeding to M-Pesa prompt")} className="w-full md:w-auto bg-primary text-white font-bold px-8 py-3.5 rounded-xl hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
             Pay & Request Pick-up
           </button>
         </div>

@@ -33,16 +33,16 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-bold text-secondary text-xl">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-bold text-white text-xl">
               H
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-lg tracking-tight">Harrison <span className="text-primary-dark font-black italic">Courier</span></span>
+              <span className="font-bold text-lg tracking-tight">Harrison <span className="text-blue-600 font-black italic">Courier</span></span>
             </div>
           </Link>
           
           <div className="hidden md:flex space-x-6 items-center text-sm font-semibold">
-            <a href="#services" className="text-primary-dark hover:text-black transition-colors">Services</a>
+            <a href="#services" className="text-blue-600 hover:text-black transition-colors">Services</a>
             <a href="#how-it-works" className="text-gray-600 hover:text-black transition-colors">How it Works</a>
             <a href="#pricing" className="text-gray-600 hover:text-black transition-colors">Pricing</a>
             <div className="h-4 w-px bg-gray-200 ml-6 mr-2"></div>
@@ -68,7 +68,7 @@ const Navbar = () => {
             <a href="#how-it-works" onClick={() => setIsOpen(false)} className="text-lg font-medium">How it Works</a>
             <a href="#pricing" onClick={() => setIsOpen(false)} className="text-lg font-medium">Pricing</a>
             <Link to="/login" className="text-lg font-medium pt-4 border-t border-gray-100">Sign In</Link>
-            <Link to="/login" className="bg-primary text-secondary font-bold text-lg px-6 py-3 rounded-full inline-flex items-center justify-center">
+            <Link to="/login" className="bg-primary text-white font-bold text-lg px-6 py-3 rounded-full inline-flex items-center justify-center">
               Book Delivery <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
@@ -80,22 +80,21 @@ const Navbar = () => {
 
 const HeroSection = () => {
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 relative overflow-hidden min-h-[90vh] flex items-center bg-transparent">
+    <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 relative overflow-hidden min-h-[90vh] flex items-center bg-[#0a192f]">
       {/* Background Image Elements */}
-      <div className="absolute top-0 right-0 w-full lg:w-2/3 h-[50vh] lg:h-full z-[-1] opacity-[0.15]">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F5F5F5] via-[#F5F5F5]/50 to-transparent z-10 lg:block hidden" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F5F5F5] to-transparent z-10" />
+      <div className="absolute inset-0 z-0">
         <motion.img 
           initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 0.4, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7a?q=80&w=2070&auto=format&fit=crop" 
           alt="Delivery truck in Nairobi" 
-          className="w-full h-full object-cover object-right grayscale mix-blend-multiply"
+          className="w-full h-full object-cover mix-blend-overlay"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/80 to-[#0f172a]/30 z-10" />
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full relative z-20">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,66 +105,66 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider w-max"
+            className="inline-flex items-center bg-blue-500/20 text-blue-300 border border-blue-500/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider w-max backdrop-blur-sm"
           >
             🚀 Same-day Delivery in Nairobi
           </motion.div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight text-secondary">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight text-white drop-shadow-lg">
             Fast, Reliable <br />
-            <span className="text-primary-dark">Delivery</span> Across <br />
-            Nairobi.
+            <span className="text-primary italic">Fulfillment</span> & <br />
+            Logistics.
           </h1>
           
-          <p className="text-gray-600 text-xl max-w-md font-medium leading-relaxed">
-            E-commerce fulfillment & courier services tailored for Kenyan SMEs and individuals.
+          <p className="text-gray-300 text-xl max-w-md font-medium leading-relaxed drop-shadow-md">
+            E-commerce fulfillment, warehousing, & courier services tailored for Kenyan SMEs and enterprise clients.
           </p>
 
-          <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 flex flex-col gap-4 mt-6 max-w-lg">
+          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/20 flex flex-col gap-4 mt-6 max-w-lg">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Pickup Point</label>
-                <select className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm font-medium outline-none text-secondary">
-                  <option>Westlands, Nairobi</option>
-                  <option>Kilimani</option>
+                <label className="text-[10px] font-bold text-gray-300 uppercase tracking-widest block">Pickup Point</label>
+                <select className="w-full bg-white/5 border border-white/10 text-white rounded-lg p-3 text-sm font-medium outline-none [&>option]:text-secondary">
+                  <option>Warehouse, Nairobi</option>
+                  <option>Mombasa Port</option>
                   <option>CBD</option>
                 </select>
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Drop-off Point</label>
-                <select className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm font-medium outline-none text-secondary">
-                  <option>Lang'ata, Nairobi</option>
-                  <option>Karen</option>
-                  <option>Kasarani</option>
+                <label className="text-[10px] font-bold text-gray-300 uppercase tracking-widest block">Drop-off Point</label>
+                <select className="w-full bg-white/5 border border-white/10 text-white rounded-lg p-3 text-sm font-medium outline-none [&>option]:text-secondary">
+                  <option>Customer Doorstep</option>
+                  <option>Retail Store</option>
+                  <option>Upcountry</option>
                 </select>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-between p-3 bg-yellow-50 rounded-xl border border-yellow-100 gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-between p-3 bg-white/5 rounded-xl border border-white/10 gap-4">
               <div className="flex items-center gap-3 w-full sm:w-auto">
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold text-secondary">KES</div>
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold text-white shadow-lg">KES</div>
                 <div>
-                  <div className="text-[10px] text-yellow-800 font-bold uppercase tracking-widest">Estimate Cost</div>
-                  <div className="text-lg font-black tracking-tight text-secondary">~ 350.00</div>
+                  <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Pricing</div>
+                  <div className="text-lg font-black tracking-tight text-white drop-shadow-sm">Custom Quote</div>
                 </div>
               </div>
-              <Link to="/login" className="bg-secondary text-primary px-6 py-3 rounded-xl font-bold hover:bg-gray-800 transition-colors w-full sm:w-auto text-center">Book Pickup</Link>
+              <Link to="/login" className="bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/30 w-full sm:w-auto text-center border border-primary-dark/50">Request Quote</Link>
             </div>
           </div>
           
           <div className="flex gap-6 sm:gap-8 items-center pt-8 overflow-x-auto whitespace-nowrap pb-4 sm:pb-0">
             <div className="flex flex-col">
-              <span className="text-2xl font-black text-secondary">10k+</span>
-              <span className="text-xs font-bold text-gray-400 uppercase">Deliveries</span>
+              <span className="text-2xl font-black text-white drop-shadow-md">1M+</span>
+              <span className="text-xs font-bold text-blue-300 uppercase">Parcels</span>
             </div>
-            <div className="h-8 w-[1px] bg-gray-200"></div>
+            <div className="h-8 w-[1px] bg-white/20"></div>
             <div className="flex flex-col">
-              <span className="text-2xl font-black text-secondary">98%</span>
-              <span className="text-xs font-bold text-gray-400 uppercase">Success Rate</span>
+              <span className="text-2xl font-black text-white drop-shadow-md">99%</span>
+              <span className="text-xs font-bold text-blue-300 uppercase">On-Time</span>
             </div>
-            <div className="h-8 w-[1px] bg-gray-200"></div>
+            <div className="h-8 w-[1px] bg-white/20"></div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold shrink-0">M</div>
-              <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase leading-tight whitespace-normal max-w-[80px]">Official M-Pesa Partner</span>
+              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold shrink-0 shadow-lg">✓</div>
+              <span className="text-[10px] sm:text-xs font-bold text-gray-300 uppercase leading-tight whitespace-normal max-w-[80px]">Fully Insured</span>
             </div>
           </div>
         </motion.div>
@@ -176,65 +175,60 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="lg:col-span-5 w-full flex items-center justify-center mt-8 lg:mt-0"
         >
-          <div className="w-full bg-secondary rounded-[32px] p-6 shadow-2xl relative border-4 border-gray-800 text-white max-w-md mx-auto lg:ml-auto overflow-hidden">
+          <div className="w-full bg-white/10 backdrop-blur-xl rounded-[32px] p-6 shadow-2xl relative border border-white/20 text-white max-w-md mx-auto lg:ml-auto overflow-hidden">
             <motion.div 
               animate={{ y: [0, -10, 0] }} 
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -top-12 -right-12 w-32 h-32 bg-primary/20 blur-2xl rounded-full" 
+              className="absolute -top-12 -right-12 w-32 h-32 bg-primary/30 blur-3xl rounded-full pointer-events-none" 
             />
-            <div className="flex justify-between items-center mb-6">
-              <div className="font-bold text-lg">Live Dashboard</div>
-              <div className="text-[10px] text-primary font-mono bg-primary/10 px-2 py-1 rounded">SYS_ACTIVE // V.2.0</div>
+            <div className="flex justify-between items-center mb-6 relative z-10">
+              <div className="font-bold text-lg tracking-tight">System Status</div>
+              <div className="text-[10px] text-green-400 font-mono bg-green-400/10 border border-green-400/20 px-2 py-1 rounded">ALL SYSTEMS NOMINAL</div>
             </div>
             
-            <div className="bg-gray-800/80 rounded-xl p-4 mb-4 border border-white/10">
+            <div className="bg-white/5 rounded-xl p-4 mb-4 border border-white/10 relative z-10">
               <div className="flex justify-between items-center mb-3">
-                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Active Order #HC9920</span>
-                <span className="text-[10px] text-green-400 font-bold uppercase tracking-widest flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> In Transit</span>
+                <span className="text-[10px] text-gray-300 font-bold uppercase tracking-widest">Active Dispatch #BX-882</span>
+                <span className="text-[10px] text-primary font-bold uppercase tracking-widest flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> In Transit</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                  <Truck className="h-5 w-5 text-primary" />
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30 text-primary">
+                  <Truck className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
-                  <div className="h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary w-3/4 rounded-full"></div>
+                  <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-primary to-blue-400 w-3/4 rounded-full"></div>
                   </div>
-                  <div className="flex justify-between text-[10px] text-gray-400 mt-2 font-bold tracking-wider">
-                    <span>PICKUP: CBD</span>
-                    <span>DROP: KILIMANI</span>
+                  <div className="flex justify-between text-[10px] text-gray-300 mt-2 font-bold tracking-wider uppercase">
+                    <span>Nairobi West</span>
+                    <span>Msa Road</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="space-y-3 mt-6">
-              <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1.5 border-b border-white/10 pb-2">Recent Activity</div>
-              <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
-                <div className="text-xs font-semibold">Order #HC9918</div>
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Delivered</div>
-                <div className="text-xs font-bold text-primary font-mono tracking-tighter">KES 250</div>
+            <div className="space-y-3 mt-6 relative z-10">
+              <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1.5 border-b border-white/10 pb-2">Fleet Activity</div>
+              <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer">
+                <div className="text-xs font-semibold">Truck #KDG-321</div>
+                <div className="text-[10px] text-green-400 font-bold uppercase tracking-widest">Unloading</div>
+                <div className="text-xs font-bold text-gray-300 font-mono tracking-tighter">HQ Hub</div>
               </div>
-              <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
-                <div className="text-xs font-semibold">Order #HC9917</div>
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Delivered</div>
-                <div className="text-xs font-bold text-primary font-mono tracking-tighter">KES 1,200</div>
-              </div>
-              <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
-                <div className="text-xs font-semibold">Order #HC9915</div>
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Cancelled</div>
-                <div className="text-xs font-bold text-red-400 font-mono tracking-tighter">KES 0</div>
+              <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer">
+                <div className="text-xs font-semibold">Van #KCW-912</div>
+                <div className="text-[10px] text-blue-300 font-bold uppercase tracking-widest">Out for Delivery</div>
+                <div className="text-xs font-bold text-gray-300 font-mono tracking-tighter">Route 4</div>
               </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-3 mt-6">
-              <div className="bg-primary p-4 rounded-2xl flex flex-col gap-1 hover:bg-primary-dark transition-colors cursor-pointer" onClick={() => alert("Warehouse tracking.")}>
-                <span className="text-[10px] font-black uppercase text-secondary/50">Warehouse</span>
-                <span className="text-sm font-bold text-secondary">Inventory Check</span>
+            <div className="grid grid-cols-2 gap-3 mt-6 relative z-10">
+              <div className="bg-primary/20 border border-primary/30 p-4 rounded-2xl flex flex-col gap-1 hover:bg-primary/30 transition-colors cursor-pointer" onClick={() => alert("Warehouse tracking.")}>
+                <span className="text-[10px] font-black uppercase text-blue-200">Management</span>
+                <span className="text-sm font-bold text-white">Client Portal</span>
               </div>
-              <div className="bg-white/10 p-4 rounded-2xl flex flex-col gap-1 hover:bg-white/20 transition-colors cursor-pointer">
-                <span className="text-[10px] font-black uppercase text-white/50">Support</span>
-                <span className="text-sm font-bold text-white">Live Chat</span>
+              <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex flex-col gap-1 hover:bg-white/10 transition-colors cursor-pointer">
+                <span className="text-[10px] font-black uppercase text-gray-400">Support</span>
+                <span className="text-sm font-bold text-white">Contact Us</span>
               </div>
             </div>
           </div>
@@ -247,7 +241,7 @@ const HeroSection = () => {
 const HowItWorks = () => {
   return (
     <section id="how-it-works" className="bg-white border-y border-gray-200 py-6 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 overflow-hidden relative">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7a?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-5 pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1624445330880-92716a4feee6?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-5 pointer-events-none z-0"></div>
       
       <div className="flex gap-8 md:gap-12 flex-wrap justify-center relative z-10">
         <motion.div 
@@ -361,13 +355,13 @@ const Services = () => {
     },
     {
       title: "E-commerce Fulfillment",
-      desc: "Designed for Instagram & Shopify sellers. We pick, pack, and deliver. Pay-on-delivery collection included.",
+      desc: "Designed for SMEs & Brands. We pick, pack, and deliver. Pay-on-delivery collection included.",
       icon: <Box className="h-6 w-6" />,
     },
     {
-      title: "Business Bulk Delivery",
-      desc: "Volume shipments for B2B. Dedicated riders and custom billing cycles for high-volume enterprise clients.",
-      icon: <TrendingUp className="h-6 w-6" />,
+      title: "Medical Courier",
+      desc: "Secure, temperature-tracked transport for pharmaceuticals, specimens, and medical supplies.",
+      icon: <ShieldCheck className="h-6 w-6" />,
     }
   ];
 
@@ -379,7 +373,7 @@ const Services = () => {
             <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Capabilities</div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight text-secondary">Our Services</h2>
           </div>
-          <Link to="/login" className="inline-flex items-center gap-2 font-bold text-sm uppercase tracking-wider text-secondary hover:text-primary-dark transition-colors">
+          <Link to="/login" className="inline-flex items-center gap-2 font-bold text-sm uppercase tracking-wider text-secondary hover:text-blue-600 transition-colors">
             View All <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
@@ -394,7 +388,7 @@ const Services = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="bg-white border-2 border-gray-100 p-6 rounded-2xl hover:border-secondary hover:shadow-lg transition-all group flex flex-col relative text-secondary"
             >
-              <div className="absolute top-6 right-6 text-gray-200 group-hover:text-primary-dark transition-colors">
+              <div className="absolute top-6 right-6 text-gray-200 group-hover:text-blue-600 transition-colors">
                 <ArrowRight className="h-5 w-5 -rotate-45" />
               </div>
               <div className="w-12 h-12 bg-[#F5F5F5] text-secondary rounded-xl border border-gray-200 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
@@ -484,7 +478,7 @@ const PricingCalculator = () => {
                    </button>
                  </div>
               </div>
-              <button type="submit" className="w-full bg-primary text-secondary font-black tracking-wide uppercase text-sm py-4 rounded-xl mt-4 hover:bg-primary-dark transition-colors">
+              <button type="submit" className="w-full bg-primary text-white font-black tracking-wide uppercase text-sm py-4 rounded-xl mt-4 hover:bg-primary-dark transition-colors">
                 Calculate Cost
               </button>
             </form>
@@ -568,7 +562,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6 hover:opacity-90 transition-opacity">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-bold text-secondary text-lg">H</div>
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-bold text-white text-lg">H</div>
               <span className="font-bold text-xl tracking-tight">Harrison <span className="text-primary italic font-black">Courier</span></span>
             </Link>
             <p className="text-gray-400 text-xs leading-relaxed font-medium">
@@ -647,7 +641,7 @@ const WhatsAppButton = () => {
 const StickyMobileCTA = () => {
   return (
     <div className="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 z-40 pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-      <Link to="/login" className="w-full bg-primary text-secondary font-bold text-lg py-3.5 rounded-xl flex items-center justify-center transition-transform active:scale-95">
+      <Link to="/login" className="w-full bg-primary text-white font-bold text-lg py-3.5 rounded-xl flex items-center justify-center transition-transform active:scale-95">
         Start Your Delivery Now
       </Link>
     </div>

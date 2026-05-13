@@ -17,7 +17,7 @@ export default function Login() {
       <div className="max-w-md w-full">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 justify-center mb-8 hover:opacity-80 transition-opacity">
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-secondary text-xl">H</div>
+          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center font-bold text-white text-xl">H</div>
           <div className="flex flex-col">
             <span className="font-bold text-xl leading-none text-secondary tracking-tight">Harrison</span>
             <span className="text-[10px] uppercase font-bold tracking-widest text-gray-500">Logistics</span>
