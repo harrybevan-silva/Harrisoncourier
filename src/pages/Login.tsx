@@ -53,7 +53,7 @@ export default function Login() {
               <input required type="password" placeholder="••••••••" className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none" />
             </div>
 
-            <button type="submit" className="w-full bg-secondary text-white font-bold text-base py-3.5 rounded-xl mt-2 hover:bg-black transition-colors flex items-center justify-center gap-2 shadow-lg shadow-black/5">
+            <button type="submit" className="w-full bg-secondary text-white font-bold text-base py-3.5 rounded-xl mt-2 hover:bg-secondary-light transition-colors flex items-center justify-center gap-2 shadow-lg shadow-secondary/20">
               {isLogin ? "Sign In" : "Create Account"} <ArrowRight className="h-4 w-4" />
             </button>
           </form>

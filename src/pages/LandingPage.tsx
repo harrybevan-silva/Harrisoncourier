@@ -25,6 +25,29 @@ import { motion, AnimatePresence } from "motion/react";
 // Make sure to add WhatsApp link later
 const WHATSAPP_NUMBER = "254741878383";
 
+const AnimatedBackground = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <motion.div
+      animate={{ 
+        y: [0, -20, 0],
+        x: [0, 10, 0],
+        scale: [1, 1.05, 1]
+      }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+    />
+    <motion.div
+      animate={{ 
+        y: [0, 30, 0],
+        x: [0, -20, 0],
+        scale: [1, 1.1, 1]
+      }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-blue-500/10 rounded-full blur-3xl"
+    />
+  </div>
+);
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -80,18 +103,18 @@ const Navbar = () => {
 
 const HeroSection = () => {
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 relative overflow-hidden min-h-[90vh] flex items-center bg-[#0a192f]">
+    <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 relative overflow-hidden min-h-[90vh] flex items-center bg-blue-800">
       {/* Background Image Elements */}
       <div className="absolute inset-0 z-0">
         <motion.img 
           initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 0.4, scale: 1 }}
+          animate={{ opacity: 0.65, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7a?q=80&w=2070&auto=format&fit=crop" 
           alt="Delivery truck in Nairobi" 
-          className="w-full h-full object-cover mix-blend-overlay"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/80 to-[#0f172a]/30 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-800/95 via-blue-800/70 to-blue-600/30 z-10" />
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full relative z-20">
@@ -110,13 +133,13 @@ const HeroSection = () => {
             🚀 Same-day Delivery in Nairobi
           </motion.div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight text-white drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight text-white drop-shadow-2xl">
             Fast, Reliable <br />
-            <span className="text-primary italic">Fulfillment</span> & <br />
+            <span className="text-primary italic drop-shadow-lg">Fulfillment</span> & <br />
             Logistics.
           </h1>
           
-          <p className="text-gray-300 text-xl max-w-md font-medium leading-relaxed drop-shadow-md">
+          <p className="text-gray-200 text-xl max-w-md font-medium leading-relaxed drop-shadow-lg">
             E-commerce fulfillment, warehousing, & courier services tailored for Kenyan SMEs and enterprise clients.
           </p>
 
@@ -241,7 +264,8 @@ const HeroSection = () => {
 const HowItWorks = () => {
   return (
     <section id="how-it-works" className="bg-white border-y border-gray-200 py-6 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 overflow-hidden relative">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1624445330880-92716a4feee6?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-5 pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1624445330880-92716a4feee6?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-15 pointer-events-none z-0"></div>
+      <AnimatedBackground />
       
       <div className="flex gap-8 md:gap-12 flex-wrap justify-center relative z-10">
         <motion.div 
@@ -366,7 +390,9 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-[#F5F5F5] relative border-b border-gray-200">
+    <section id="services" className="py-24 bg-[#F5F5F5] relative border-b border-gray-200 overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 pointer-events-none z-0"></div>
+      <AnimatedBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         <div className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
           <div>
@@ -425,8 +451,9 @@ const PricingCalculator = () => {
   };
 
   return (
-    <section id="pricing" className="py-24 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <section id="pricing" className="py-24 bg-white border-b border-gray-200 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-15 pointer-events-none z-0"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -489,7 +516,7 @@ const PricingCalculator = () => {
                   <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Estimated Cost</p>
                   <p className="text-2xl font-black text-secondary tracking-tight">KES {price}.00</p>
                 </div>
-                <Link to="/login" className="bg-secondary text-white px-5 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-gray-800 transition shadow-md">
+                <Link to="/login" className="bg-secondary text-white px-5 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-secondary-light transition shadow-md">
                   Book Now
                 </Link>
               </div>
@@ -504,7 +531,8 @@ const PricingCalculator = () => {
 const SocialProof = () => {
    return (
       <section className="py-24 bg-[#F5F5F5] border-b border-gray-200 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-[0.03] pointer-events-none z-0"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 pointer-events-none z-0"></div>
+        <AnimatedBackground />
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
